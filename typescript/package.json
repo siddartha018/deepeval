@@ -156,8 +156,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc && tsc-alias && npm run build:inspect-ui",
-    "build:inspect-ui": "tsc -p tsconfig.inspect.json && node scripts/mark-inspect-ui-esm.mjs",
+    "build": "node init && tsc && tsc-alias && npm run build:inspect-ui",
+    "build:inspect-ui": "node init && tsc -p tsconfig.inspect.json && node scripts/mark-inspect-ui-esm.mjs",
     "prepublishOnly": "npm run build",
     "test": "jest",
     "test:e2e": "node dist/cli/index.js test run tests/deepeval-test-run-test/suites --identifier ts-e2e",
